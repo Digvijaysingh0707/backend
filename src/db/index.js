@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import { DB_NAME } from "../constants.js";
+const mongoose =require("mongoose");
+const  DB_NAME = require("../constants.js");
 
 const connectDB = async () => {
   try {
@@ -8,7 +8,7 @@ const connectDB = async () => {
     );
 
     console.log(
-      `\n MONGODB connected !! DB HOST: ${connectionInstance.connection.host}`
+      `\n MONGODB connected || DB HOST: ${connectionInstance.connection.host}`
     );
   } catch (error) {
     console.log("MongoDB connection error ", error);
@@ -16,4 +16,6 @@ const connectDB = async () => {
   }
 };
 
-export default connectDB;
+module.exports = {
+  connectDB,
+};
